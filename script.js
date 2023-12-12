@@ -3,6 +3,8 @@ const dropdown = document.querySelectorAll('.dropdown')
 const navLinks = document.querySelector('.nav-links')
 const navIcon = document.querySelector('.nav_icon')
 const main = document.querySelector('main')
+const nav = document.querySelector('nav')
+const body = document.querySelector('body')
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -53,4 +55,21 @@ function showNav() {
   }
 }
 
+function hideDropDown() {}
+
+function hideNav(e) {
+  if (e.keyCode === 27) {
+    if (navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show')
+      navIcon.innerHTML = `<img src="images/icon-menu.svg" alt="" />`
+      navIcon.setAttribute('aria-expanded', false)
+      navIcon.setAttribute('aria-label', 'show navigation menu')
+      main.classList.remove('show')
+    }
+  } else {
+    return
+  }
+}
+
 navIcon.addEventListener('click', showNav)
+window.addEventListener('keydown', hideNav)

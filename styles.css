@@ -154,9 +154,6 @@ nav {
 }
 
 main {
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-start; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 3rem 7rem;
@@ -244,7 +241,7 @@ picture img {
 @media (max-width: 500px) {
   .nav_icon {
     display: block;
-    z-index: 1;
+    z-index: 2;
     margin-bottom: 2rem;
   }
 
@@ -264,7 +261,6 @@ picture img {
   }
 
   .nav-links {
-    /* margin-top: 2rem; */
     display: none;
     flex-direction: column;
     align-items: flex-start;
