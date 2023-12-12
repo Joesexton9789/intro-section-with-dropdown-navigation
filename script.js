@@ -12,7 +12,9 @@ buttons.forEach(button => {
     button.nextElementSibling.classList.toggle('show')
 
     if (button.nextElementSibling.classList.contains('show')) {
-      button.innerHTML = `<img src="images/icon-arrow-up.svg" alt="" />`
+      button.innerHTML = `${
+        button.classList.contains('features_menu') ? 'Features' : 'Company'
+      } <img src="images/icon-arrow-up.svg" alt="" />`
       button.setAttribute('aria-expanded', true)
       button.setAttribute(
         'aria-label',
@@ -21,7 +23,9 @@ buttons.forEach(button => {
           : 'hide company menu'
       )
     } else {
-      button.innerHTML = `<img src="images/icon-arrow-down.svg" alt="" />`
+      button.innerHTML = `${
+        button.classList.contains('features_menu') ? 'Features' : 'Company'
+      } <img src="images/icon-arrow-down.svg" alt="" />`
       button.setAttribute('aria-expanded', false)
       button.setAttribute(
         'aria-label',
