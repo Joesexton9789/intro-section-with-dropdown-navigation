@@ -18,23 +18,11 @@ buttons.forEach(button => {
         button.classList.contains('features_menu') ? 'Features' : 'Company'
       } <img src="images/icon-arrow-up.svg" alt="" />`
       button.setAttribute('aria-expanded', true)
-      button.setAttribute(
-        'aria-label',
-        button.classList.contains('features_menu')
-          ? 'hide features menu'
-          : 'hide company menu'
-      )
     } else {
       button.innerHTML = `${
         button.classList.contains('features_menu') ? 'Features' : 'Company'
       } <img src="images/icon-arrow-down.svg" alt="" />`
       button.setAttribute('aria-expanded', false)
-      button.setAttribute(
-        'aria-label',
-        button.classList.contains('features_menu')
-          ? 'show features menu'
-          : 'show company menu'
-      )
     }
   })
 })
@@ -45,12 +33,10 @@ function showNav() {
   if (navLinks.classList.contains('show')) {
     navIcon.innerHTML = `<img src="images/icon-close-menu.svg" alt="" />`
     navIcon.setAttribute('aria-expanded', true)
-    navIcon.setAttribute('aria-label', 'hide navigation menu')
     main.classList.add('show')
   } else {
     navIcon.innerHTML = `<img src="images/icon-menu.svg" alt="" />`
     navIcon.setAttribute('aria-expanded', false)
-    navIcon.setAttribute('aria-label', 'show navigation menu')
     main.classList.remove('show')
   }
 }
@@ -63,7 +49,6 @@ function hideNav(e) {
       navLinks.classList.remove('show')
       navIcon.innerHTML = `<img src="images/icon-menu.svg" alt="" />`
       navIcon.setAttribute('aria-expanded', false)
-      navIcon.setAttribute('aria-label', 'show navigation menu')
       main.classList.remove('show')
     }
   } else {
